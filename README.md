@@ -49,43 +49,43 @@ Current-controlled PWM inverters are widely used in high-performance AC drives d
 
 ---
 
+## Inverter Model
+
 ### Single-Phase Grid Connected Inverter
+The output of a PV model is not constant and is relatively small. To boost the voltage and maintain consistency, a **boost converter** is used. The boosted voltage is then converted into AC by the inverter, and the developed power is injected into the grid.
 
-#### Ideal Circuit
-The ideal circuit of a single-phase full-bridge grid-connected inverter is shown below. The PV array produces DC power, which is boosted by a step-up converter and then converted to AC by the inverter. Synchronization ensures the inverter output matches the grid's phase and frequency.
+#### MATLAB Simulink Models and Outputs
+- **Fig.5.1**: Single-Phase Grid Connected Inverter Model
+- **Fig.5.2**: Gating Pulses of the Inverter Switching Module
+- **Fig.5.3**: Hysteresis Controller Simulink Model
 
-#### Schematic
-The inverter consists of four power MOSFETs (IRF840) and four fast recovery diodes (FR407). For larger systems, IGBTs are recommended due to their cost-effectiveness at higher power ratings.
+### Inverter Parameters and Specifications
 
-**Switching Characteristics:**
-- Voltage-bidirectional, two-quadrant switches can block positive and negative voltages but conduct only positive current.
-- Optical isolated gate driver circuits are used for driving inverter switches.
-
-#### Circuit Description
-- **High-Side Gate Drivers:**
-  - Two independent power supplies (e.g., \( V_{\text{DD3}} \), \( V_{\text{DD4}} \)) drive switches \( Q3 \) and \( Q4 \).
-- **Low-Side Gate Drivers:**
-  - A common power supply \( V_{\text{DD5}} \) drives switches \( Q5 \) and \( Q6 \).
+| **Parameter**                | **Specification**       |
+|-------------------------------|--------------------------|
+| Solar Insolation              | 1000 W/m²               |
+| Nominal Solar Array Voltage   | 120 V                   |
+| Grid Voltage                  | 230 V                   |
+| Grid Frequency                | 60 Hz                   |
+| Inverter Current              | 10 A                    |
+| DC Link Capacitor             | 1000 µF                 |
+| Filter Inductor               | 5 mH                    |
+| Transformer                   | 1:1                     |
+| Inverter Switching Frequency  | 20 kHz                  |
+| Load Resistor                 | 100 Ω                   |
 
 ---
 
-## Repository Structure
+### Hysteresis Controller and MATLAB Function Control
+The **Hysteresis Controller** generates PWM pulses for the inverter. Below are the related models and waveforms:
 
-```plaintext
-grid-connected-inverter/
-├── README.md            # Overview of the project
-├── LICENSE              # License information
-├── Simulink_Model/      # MATLAB Simulink models
-│   ├── single_phase_inverter.slx
-│   └── supporting_files/
-├── Results/             # Simulation results
-│   ├── waveforms/
-│   ├── I-V_and_P-V_Characteristics/
-│   └── efficiency_analysis/
-├── Docs/                # Documentation
-│   ├── project_report.pdf
-│   └── circuit_diagrams/
-├── Scripts/             # MATLAB analysis scripts
-│   ├── pwm_analysis.m
-│   ├── mppt_simulation.m
-└── .gitignore           # Files and folders to ignore in Git
+- **Fig.5.4**: Hysteresis Controller Output
+- **Fig.5.5**: Error Output Waveform
+- **Fig.5.8**: MATLAB Simulink Model Using MATLAB Function Control
+
+#### MATLAB Function Code
+```matlab
+function a = fcn(x, ma, shift)
+    shift_k = shift * pi / 180;       % Convert degrees to radians
+    a = ma * sin(x + shift_k);       % Reference voltage
+end
