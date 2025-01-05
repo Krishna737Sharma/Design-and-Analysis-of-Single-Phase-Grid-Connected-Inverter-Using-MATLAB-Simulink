@@ -56,7 +56,7 @@ The output of a PV model is not constant and is relatively small. To boost the v
 
 #### MATLAB Simulink Models and Outputs
 
-![5 1](https://github.com/user-attachments/assets/a45b033f-8aef-4c40-bd8a-dc4e9f5fb7fa)
+![5 1](https://github.com/user-attachments/assets/40c69aa5-07c7-4026-9ad2-e1e4a12a308f)
 
 - **Fig.5.1**: Single-Phase Grid Connected Inverter Model
 - **Fig.5.2**: Gating Pulses of the Inverter Switching Module
