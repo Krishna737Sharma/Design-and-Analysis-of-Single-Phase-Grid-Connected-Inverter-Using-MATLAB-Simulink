@@ -95,8 +95,12 @@ The output of a PV model is not constant and is relatively small. To boost the v
 The **Hysteresis Controller** generates PWM pulses for the inverter. Below are the related models and waveforms:
 
 ![5 2](https://github.com/user-attachments/assets/3bb494ad-9a04-43a5-afcf-dd4516d35f99)
+
 - **Fig.5.4**: Hysteresis Controller Output
+
+
 ![5 2](https://github.com/user-attachments/assets/9104af76-f831-4feb-837e-07fa139b8eb1)
+
 - **Fig.5.5**: Error Output Waveform
 
 #### MATLAB Function Code
