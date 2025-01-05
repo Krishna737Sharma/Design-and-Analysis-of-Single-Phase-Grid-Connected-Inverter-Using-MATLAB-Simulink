@@ -62,8 +62,23 @@ The output of a PV model is not constant and is relatively small. To boost the v
 ![5 2](https://github.com/user-attachments/assets/f8815b46-7977-4a70-b0aa-25968e6c98f7)
 - **Fig.5.2**: MATLAB simulink modal by using matlab function control
 
-- **Fig.5.2**: Gating Pulses of the Inverter Switching Module
-- **Fig.5.3**: Hysteresis Controller Simulink Model
+![5 2](https://github.com/user-attachments/assets/cd93aba8-402d-477e-b9ce-6bea09ab6888)
+- **Fig.5.3**: Gating Pulses of the Inverter Switching Module
+
+- ![5 2](https://github.com/user-attachments/assets/ec71c0c2-de93-4bf5-bb8a-6abe90172f49)
+- **Fig.5.4**: Hysteresis Controller Simulink Model
+
+![5 2](https://github.com/user-attachments/assets/3bb494ad-9a04-43a5-afcf-dd4516d35f99)
+Fig.5.4.Hysteresis controller output
+
+![5 2](https://github.com/user-attachments/assets/9104af76-f831-4feb-837e-07fa139b8eb1)
+Fig.5.5.Error output waveform
+
+![5 2](https://github.com/user-attachments/assets/b3dea571-68be-4241-bd88-13517e2908b2)
+Fig.5.6.Grid current and voltage in-phase waveform
+
+![5 2](https://github.com/user-attachments/assets/98b0a26c-d3c6-4657-acfc-a83d5fbb830b)
+Fig.5.7.Grid current and voltage out of phase waveform
 
 ### Inverter Parameters and Specifications
 
